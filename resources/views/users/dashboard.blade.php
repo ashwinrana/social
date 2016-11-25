@@ -325,6 +325,7 @@
                                 </div>
                                 <br>
                                 <input type="file" name="image">
+                                <br>
                                 <button type="submit" class="btn btn-success">Post!</button>
                             </form>
     </section>

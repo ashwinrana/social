@@ -32,9 +32,8 @@ class PostController extends Controller
            $imagepost->image = $filename;
            $request->user()->posts()->save($imagepost);
            return redirect()->route('dashboard');
-
-
        }
+
        $this->validate($request, ['post' => 'required|max:1000']);
        $post = new Post();
        $post->post = $request['post'];
@@ -93,7 +92,8 @@ class PostController extends Controller
 
     function  getPostLike($post_id){
         $post = Post::find($post_id);
-//        $value=DB::table('likes')->orderBy('like', 'asc')->get();
+
+//        $value=DB::table('likes')->orderBy('like',r 'asc')->get();
 //        return $value;
 
 //        dd($like);

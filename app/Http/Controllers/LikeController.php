@@ -7,13 +7,13 @@ use Illuminate\Support\Facades\Auth;
 
 class LikeController extends Controller
 {
-    public function likeProduct($id)
-    {
-        // here you can check if product exists or is valid or whatever
-
-        $this->handleLike('App\Product', $id);
-        return redirect()->back();
-    }
+//    public function likeProduct($id)
+//    {
+//        // here you can check if product exists or is valid or whatever
+//
+//        $this->handleLike('App\Product', $id);
+//        return redirect()->back();
+//    }
 
     public function likePost($id)
     {
@@ -25,8 +25,9 @@ class LikeController extends Controller
 
     public function handleLike($type, $id)
     {
+//        dd($id, $type);
         $existing_like = Like::withTrashed()->whereLikeableType($type)->whereLikeableId($id)->whereUserId(Auth::id())->first();
-
+//        dd($id, $type);
         if (is_null($existing_like)) {
             Like::create([
                 'user_id'       => Auth::id(),

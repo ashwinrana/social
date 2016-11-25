@@ -19,10 +19,8 @@
 // app/Like.php
 
 namespace App;
-
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
 class Like extends Model
 {
     use SoftDeletes;
@@ -32,7 +30,7 @@ class Like extends Model
     protected $fillable = [
         'user_id',
         'post_id',
-        'like',
+        'likeable',
     ];
 
     /**
